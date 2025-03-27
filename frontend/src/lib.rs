@@ -1,11 +1,11 @@
 use eframe::{egui, App};
 
-pub struct DependencyWatcherApp;
+pub struct DependEye;
 
-impl App for DependencyWatcherApp {
+impl App for DependEye {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ctx, |ui| {
-            ui.heading("Dependency Watcher MVP");
+            ui.heading("DependEye");
             ui.separator();
             ui.label("Dependencies will appear here...");
         });
