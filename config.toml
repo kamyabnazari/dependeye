@@ -1,0 +1,5 @@
+[database]
+url = "sqlite://dependeye.db"
+
+[github]
+api_token = "your_token_here"

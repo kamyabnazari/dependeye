@@ -1,0 +1,10 @@
+CREATE TABLE dependencies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    repo_owner TEXT NOT NULL,
+    repo_name TEXT NOT NULL,
+    stars INTEGER DEFAULT 0,
+    forks INTEGER DEFAULT 0,
+    open_issues INTEGER DEFAULT 0,
+    last_checked TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
