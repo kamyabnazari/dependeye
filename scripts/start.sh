@@ -1,8 +1,7 @@
 #!/bin/bash
-
 set -e
 
-BUNDLE_DIR="bundle"
+BUNDLE_DIR="$(pwd)/bundle"
 DATABASE_PATH="$BUNDLE_DIR/dependeye.db"
 
 if [ ! -f "$BUNDLE_DIR/dependeye" ]; then
@@ -15,5 +14,5 @@ if [ ! -f "$DATABASE_PATH" ]; then
     exit 1
 fi
 
-echo "Starting Dependency Watcher Application..."
-DATABASE_URL="sqlite://$DATABASE_PATH" "$BUNDLE_DIR/dependeye"
+echo "Starting dependeye application..."
+DATABASE_URL="sqlite:///$DATABASE_PATH" "$BUNDLE_DIR/dependeye"
