@@ -1,12 +1,16 @@
-use sqlx::{sqlite::SqlitePoolOptions, SqlitePool};
-use std::env;
+use sqlx::SqlitePool;
 
-pub async fn connect_db() -> SqlitePool {
-    let db_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set!");
+pub async fn connect_db() -> Result<SqlitePool, sqlx::Error> {
+    let db_url = std::env::var("DATABASE_URL").expect("DATABASE_URL not set");
+    SqlitePool::connect(&db_url).await
+}
 
-    SqlitePoolOptions::new()
-        .max_connections(5)
-        .connect(&db_url)
-        .await
-        .expect("Could not connect to database")
+pub async fn check_connection() -> bool {
+    match connect_db().await {
+        Ok(_) => true,
+        Err(e) => {
+            eprintln!("DB connection error: {}", e);
+            false
+        }
+    }
 }

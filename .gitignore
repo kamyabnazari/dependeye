@@ -17,7 +17,7 @@ sqlx-data.json
 bundle/dependeye.db
 
 # Configuration files
-config.toml
+Config.toml
 
 # Logs and temporary files
 *.log

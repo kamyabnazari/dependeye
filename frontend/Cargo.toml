@@ -6,4 +6,5 @@ edition = "2024"
 [dependencies]
 egui = "0.31"
 eframe = "0.31"
+tokio = { version = "1", features = ["full"] }
 backend = { path = "../backend" }
