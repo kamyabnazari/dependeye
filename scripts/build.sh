@@ -14,7 +14,7 @@ mkdir -p "$BUNDLE_DIR"
 cp target/release/app "$BUNDLE_DIR/dependeye"
 
 # Copy configuration file
-cp config.toml "$BUNDLE_DIR/"
+cp Config.toml "$BUNDLE_DIR/"
 
 # Set up the SQLite database and apply migrations using SQLx CLI
 DATABASE_PATH="$BUNDLE_DIR/dependeye.db"
