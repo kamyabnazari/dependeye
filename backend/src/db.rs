@@ -1,7 +1,7 @@
-use sqlx::SqlitePool;
+use sqlx::{Error, SqlitePool};
 
-pub async fn connect_db() -> Result<SqlitePool, sqlx::Error> {
-    let db_url = std::env::var("DATABASE_URL").expect("DATABASE_URL not set");
+pub async fn connect_db() -> Result<SqlitePool, Error> {
+    let db_url: String = std::env::var("DATABASE_URL").expect("DATABASE_URL not set");
     SqlitePool::connect(&db_url).await
 }
 
